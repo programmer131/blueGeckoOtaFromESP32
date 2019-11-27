@@ -90,8 +90,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     Serial.println(advertisedDevice.getName().c_str());
     if (strncmp(advertisedDevice.getName().c_str(),"FACTORY",7)==0)
     {
-      Serial.println("FACTORY device found");       
-      Serial.println("./n./n./n./n../n../n.../n.");
+      Serial.println("FACTORY named device found");       
       advertisedDevice.getScan()->stop();
       pServerAddress = new BLEAddress(advertisedDevice.getAddress());     
       putToDfu=true;
@@ -138,8 +137,7 @@ void loop() {
   {
    // scanStart();
   }
-  // If the flag "doConnect" is true then we have scanned for and found the desired
-  // BLE Server with which we wish to connect.  Now we connect to it.  Once we are 
+  //Now we connect to it.  Once we are 
   // connected we set the connected flag to be true.
   if (doConnect == true) {
     Serial.println("trying to connect");
